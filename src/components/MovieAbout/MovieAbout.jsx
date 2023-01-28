@@ -12,7 +12,7 @@ import {
 } from './MovieAbout.styled';
 import PropTypes from 'prop-types';
 
-const MovieInfo = () => {
+const MovieAbout = () => {
   const [movie, setMovie] = useState([]);
   const { id } = useParams();
 
@@ -82,4 +82,4 @@ Wrap.propTypes = {
   ),
 };
 
-export default MovieInfo;
+export default MovieAbout;

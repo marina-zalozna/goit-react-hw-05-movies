@@ -1,16 +1,16 @@
 import { useSearchParams } from 'react-router-dom';
 import { Input, Wrap, WrapMain } from './SearchBar.styled';
 
-const SearchBar = ({ onSearchSubmit }) => {
+const Search = ({ onSubmit }) => {
   const [searchParam, setSearchParam] = useSearchParams();
   const query = searchParam.get('query');
 
   if (query !== '') {
-    onSearchSubmit(query);
+    onSubmit(query);
   }
 
   const handleInput = e => {
-    onSearchSubmit(query);
+    onSubmit(query);
     setSearchParam({ query: e.target.value });
   };
 
@@ -23,4 +23,4 @@ const SearchBar = ({ onSearchSubmit }) => {
   );
 };
 
-export default SearchBar;
+export default Search;
