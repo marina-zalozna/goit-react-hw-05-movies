@@ -24,32 +24,32 @@ const MovieList = ({ movies }) => {
           ({ id, title, poster_path, release_date, vote_average }) => {
             return (
               <Item key={id}>
-              <Link to={`${id}`} state={{ from: location }}>
-                <div>
-                  {poster_path ? (
-                    <Img
-                      alt={title}
-                      height={450}
-                      width={300}
-                      src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="
-                    />
-                  ) : (
-                    <Img
-                      alt={title}
-                      src={`${moviesPicture.base_url}${moviesPicture.size}${poster_path}`}
-                    />
-                  )}
-                  ;
-                </div>
-                <TextWrap>
-                  <Title>{title}</Title>
-                  <Text>
-                    Date: {release_date} | {vote_average}
-                  </Text>
-                </TextWrap>
-              </Link>
-            </Item>
-            )
+                <Link to={`${id}`} state={{ from: location }}>
+                  <div>
+                    {poster_path ? (
+                      <Img
+                        alt={title}
+                        src={`${moviesPicture.base_url}${moviesPicture.size}${poster_path}`}
+                      />
+                    ) : (
+                      <Img
+                        alt={title}
+                        height={450}
+                        width={300}
+                        src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="
+                      />
+                    )}
+                    ;
+                  </div>
+                  <TextWrap>
+                    <Title>{title}</Title>
+                    <Text>
+                      Date: {release_date} | {vote_average}
+                    </Text>
+                  </TextWrap>
+                </Link>
+              </Item>
+            );
           }
         )}
       </List>

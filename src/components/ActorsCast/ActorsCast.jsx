@@ -20,22 +20,22 @@ const ActorsCast = () => {
       {casts.map(({ name, id, profile_path }) => {
         return (
           <Item key={id}>
-          {profile_path ? (
-            <img
-              alt={name}
-              height={450}
-              width={300}
-              src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="
-            />
-          ) : (
-            <img
-              alt=""
-              src={`${castPicture.base_url}${castPicture.size}${profile_path}`}
-            />
-          )}
-          <Text>{name}</Text>
-        </Item>
-        )
+            {profile_path ? (
+              <img
+                alt=""
+                src={`${castPicture.base_url}${castPicture.size}${profile_path}`}
+              />
+            ) : (
+              <img
+                alt={name}
+                height={450}
+                width={300}
+                src="https://media.istockphoto.com/vectors/error-page-or-file-not-found-icon-vector-id924949200?k=20&m=924949200&s=170667a&w=0&h=-g01ME1udkojlHCZeoa1UnMkWZZppdIFHEKk6wMvxrs="
+              />
+            )}
+            <Text>{name}</Text>
+          </Item>
+        );
       })}
     </List>
   );
